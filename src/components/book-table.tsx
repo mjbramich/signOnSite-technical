@@ -1,3 +1,6 @@
+import { Book } from "@/types";
+
+import ActionCell from "@/components/action-cell";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
@@ -7,7 +10,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Book } from "@/types";
 
 interface Props {
   books: Book[];
@@ -37,7 +39,7 @@ const BookTable = ({ books }: Props) => {
                   </TableCell>
                   <TableCell className="">{book.owner}</TableCell>
                   <TableCell className="">
-                    {book.available ? "Available" : "Unavailable"}
+                    <ActionCell available={book.available} />
                   </TableCell>
                 </TableRow>
               ))
