@@ -2,6 +2,7 @@
   "name": "signonsite-technical",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -23,6 +24,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@types/jest": "^29.5.12",
