@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Pagination from "./pagination";
 
 describe("Pagination component", () => {
@@ -14,15 +14,12 @@ describe("Pagination component", () => {
   });
 
   it("Should go back to previous page when previous button is clicked", async () => {
-    // Arrange
     const setPageMock = jest.fn();
     render(<Pagination totalPages={3} currentPage={2} setPage={setPageMock} />);
 
-    // Act
     const previousButton = screen.getByText("Previous");
     fireEvent.click(previousButton);
 
-    // Assert
     expect(setPageMock).toHaveBeenCalledWith(1);
   });
 
@@ -37,15 +34,12 @@ describe("Pagination component", () => {
   });
 
   it("Should go forward to next page when next button is clicked", async () => {
-    // Arrange
     const setPageMock = jest.fn();
     render(<Pagination totalPages={3} currentPage={2} setPage={setPageMock} />);
 
-    // Act
     const nextButton = screen.getByText("Next");
     fireEvent.click(nextButton);
 
-    // Assert
     expect(setPageMock).toHaveBeenCalledWith(3);
   });
 
